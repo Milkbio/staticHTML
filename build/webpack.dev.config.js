@@ -1,17 +1,20 @@
+const path = require('path');
+function resolve(dir) {
+	return path.join(__dirname, '..', dir);
+}
 module.exports = {
 	mode: 'development',
 	entry: {
-		index: '../src/index.js'
+		index: resolve('src/index.js')
 	},
 	output: {
 		path: '/dist',
 		filename: 'js/[name].js'
 	},
-	devServer: {
-		contentBase:'./assets',
+	/*devServer: {
 		host: 'localhost',
 		port: 8000,
-		publicPath: '/',
+		// publicPath: '/',
 		compress: true,
 		noInfo: true,
 		inline: true,
@@ -20,5 +23,5 @@ module.exports = {
 			colors: true,
 			chunks: false
 		}
-	}
+	}*/
 }
