@@ -11,17 +11,18 @@ module.exports = {
 		path: '/dist',
 		filename: 'js/[name].js'
 	},
-	/*devServer: {
+	devServer: {
+		contentBase: resolve('dist'),
 		host: 'localhost',
-		port: 8000,
+		port: 8080,
 		// publicPath: '/',
-		compress: true,
+		// compress: true,
 		noInfo: true,
 		inline: true,
 		hot: true,
-		stats: {
+		/*stats: {
 			colors: true,
 			chunks: false
-		}
-	}*/
+		}*/
+	}
 }
