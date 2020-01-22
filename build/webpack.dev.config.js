@@ -1,4 +1,6 @@
 const path = require('path');
+
+const htmlWebpackPlugin = require('html-webpack-plugin');
 function resolve(dir) {
 	return path.join(__dirname, '..', dir);
 }
@@ -12,17 +14,26 @@ module.exports = {
 		filename: 'js/[name].js'
 	},
 	devServer: {
-		contentBase: resolve('dist'),
+		// contentBase: resolve('dist'),
 		host: 'localhost',
 		port: 8080,
 		// publicPath: '/',
 		// compress: true,
-		noInfo: true,
 		inline: true,
 		hot: true,
 		/*stats: {
 			colors: true,
 			chunks: false
 		}*/
-	}
+	},
+	plugins: [
+		new htmlWebpackPlugin({
+			minify: {
+				removeAttributeQuotes: true
+			},
+			hash: true,
+			template: resolve('index.html'),
+			filename: 'index.html'
+		})
+	]
 }
