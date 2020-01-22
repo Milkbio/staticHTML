@@ -1,1 +1,7 @@
-console.log("Hello World from your main file!");
+import $ from 'jquery'
+
+$('#btn').click(() => {
+	$.ajax({
+	
+	})
+})
